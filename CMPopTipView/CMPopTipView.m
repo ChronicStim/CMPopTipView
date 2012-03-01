@@ -26,7 +26,7 @@
 #import "CMPopTipView.h"
 
 @interface CMPopTipView ()
-@property (nonatomic, retain, readwrite)	id	targetObject;
+@property (nonatomic, strong, readwrite)	id	targetObject;
 @end
 
 
@@ -481,16 +481,6 @@
 	return self;
 }
 
-- (void)dealloc {
-	[backgroundColor release];
-    [customView release];
-	[message release];
-	[targetObject release];
-	[textColor release];
-	[textFont release];
-	
-    [super dealloc];
-}
 
 
 @end
