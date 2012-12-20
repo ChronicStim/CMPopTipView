@@ -125,7 +125,7 @@ typedef enum {
 @property (nonatomic, strong, readonly)	id						targetObject;
 @property (nonatomic, strong)			UIColor					*textColor;
 @property (nonatomic, strong)			UIFont					*textFont;
-@property (nonatomic, assign)			UITextAlignment			textAlignment;
+@property (nonatomic, assign)			NSTextAlignment			textAlignment;
 @property (nonatomic, assign)           CMPopTipAnimation       animation;
 @property (nonatomic, assign)           CGFloat                 maxWidth;
 
