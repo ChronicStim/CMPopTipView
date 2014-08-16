@@ -370,7 +370,7 @@
 	UIView *targetSuperview = [targetView superview];
 	UIView *containerView = nil;
 	if ([targetSuperview isKindOfClass:[UINavigationBar class]]) {
-		UINavigationController *navController = [(UINavigationBar *)targetSuperview delegate];
+		UINavigationController *navController = (UINavigationController *)[(UINavigationBar *)targetSuperview delegate];
 		containerView = [[navController topViewController] view];
 	}
 	else if ([targetSuperview isKindOfClass:[UIToolbar class]]) {
