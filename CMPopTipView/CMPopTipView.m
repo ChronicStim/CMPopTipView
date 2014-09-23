@@ -160,7 +160,7 @@
 	CGFloat green;
 	CGFloat blue;
 	CGFloat alpha;
-	int numComponents = CGColorGetNumberOfComponents([backgroundColor CGColor]);
+	size_t numComponents = CGColorGetNumberOfComponents([backgroundColor CGColor]);
 	const CGFloat *components = CGColorGetComponents([backgroundColor CGColor]);
 	if (numComponents == 2) {
 		red = components[0];
