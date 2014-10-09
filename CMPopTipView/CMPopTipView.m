@@ -254,9 +254,13 @@
 	CGSize textSize = CGSizeZero;
     
     if (self.message!=nil) {
-        textSize= [self.message sizeWithFont:textFont
-                           constrainedToSize:CGSizeMake(rectWidth, 99999.0)
-                               lineBreakMode:NSLineBreakByWordWrapping];
+        
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        
+        NSDictionary *attrDict = @{NSFontAttributeName : textFont, NSParagraphStyleAttributeName : paragraphStyle};
+        textSize = [self.message boundingRectWithSize:CGSizeMake(rectWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attrDict context:nil].size;
+        
     }
     if (self.customView != nil) {
         textSize = self.customView.frame.size;
