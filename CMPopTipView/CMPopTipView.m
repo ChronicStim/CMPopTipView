@@ -205,10 +205,14 @@
 	if (self.message) {
 		[textColor set];
 		CGRect textFrame = [self contentFrame];
-        [self.message drawInRect:textFrame
-                        withFont:textFont
-                   lineBreakMode:NSLineBreakByWordWrapping
-                       alignment:NSTextAlignmentCenter];
+        
+        NSMutableParagraphStyle* paragraphStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        paragraphStyle.alignment = NSTextAlignmentCenter;
+        
+        NSDictionary* attributes = @{NSFontAttributeName: textFont, NSParagraphStyleAttributeName: paragraphStyle};
+        
+        [self.message drawInRect:textFrame withAttributes:attributes];
     }
 }
 
