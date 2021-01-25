@@ -226,7 +226,7 @@
 	// Size of rounded rect
 	CGFloat rectWidth;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         // iPad
         if (maxWidth) {
             if (maxWidth < containerView.frame.size.width) {
